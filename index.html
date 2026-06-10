@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cocktail-app</title>
+    <title>BarPilot</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
    
     <div class="header-container">
-         <h1>Cocktail App</h1>
+         <h1>Bar Pilot</h1>
         <input id="search" placeholder="Cerca la tua ricetta...">
 
        
@@ -30,10 +30,16 @@
 
     <div id="app"> </div>
      
-   
+ 
 
    <script src ="data.js"></script>
+    <div id="modal" class="modal hidden">
+  <div class="modal-content">
+    <button id="modal-close" class="modal-close">&times;</button>
+    <div id="modal-body"></div>
+  </div>
     <script src="app.js"></script>
-
+ 
+</div>
 </body>
 </html>

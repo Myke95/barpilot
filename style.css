@@ -18,37 +18,43 @@ h1 {
     margin: 4px 0 2px 0;                     
     font-size: 1.1rem;             /* Piccolo e finissimo */
     font-weight: 900;
-    text-transform: uppercase;     
+     
     letter-spacing: 0.25em;        /* Molto spaziato per rimanere lussuoso */
     color: #ffffff;            
     display: inline-block;
     align-self: center;
     text-shadow: 
         0 0 3px #ffffff,            
-        0 0 8px #ef4444,           
+        0 0 8px #dd3232,           
         0 0 15px rgba(239, 68, 68, 0.5); 
 }
 
 /* ==========================================================================
    2. IL MENU SUPERIORE (Ultra compatto e affiancato su mobile)
    ========================================================================= */
+/* ==========================================================================
+   HEADER STICKY
+   Rimane in alto durante lo scroll senza creare problemi da fixed
+   ========================================================================== */
+
 .header-container {
-    position: fixed;              
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);  
-    width: 100%;
-    max-width: 600px;
-    padding: 8px 12px;             
-    display: flex;
-    flex-direction: row;           /* Affiancati su mobile */
-    flex-wrap: wrap;               
-    justify-content: space-between;
-    align-items: center;
-    gap: 8px;                      
-    z-index: 9999;
-    background-color: #111827;    
-    box-sizing: border-box;       
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+
+  padding: 8px 12px;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: #111827;
+  box-sizing: border-box;
 }
 
 .header-container h1 {
@@ -59,9 +65,9 @@ h1 {
 /* BARRA DI RICERCA DI BASE */
 #search {
     flex: 6 !important;
-    width: auto !important;
-    padding: 8px 12px;             
-    font-size: 0.85rem;
+    width: 80%;
+    padding: 10px 12px;             
+    font-size: 0.90rem;
     border-radius: 8px;
     border: 1px solid #374151;
     background-color: #1f2937;    /* Grigio scuro di base dell'applicazione */
@@ -112,15 +118,14 @@ h1 {
    3. LA GRIGLIA A DUE COLONNE (Stile IBA)
    ========================================================================== */
 #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    padding: 95px 16px 32px 16px; /* Scalino basso perfetto per mobile */
-    max-width: 1200px;
-    margin: 0 auto;
-    box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  padding: 20px 16px 32px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
 }
-
 /* ==========================================================================
    4. DESIGN DELLA CARD SOLIDA (Stile squadrato e pulito IBA)
    ========================================================================== */
@@ -169,6 +174,7 @@ h1 {
     line-height: 1.3;
 }
 
+
 .tags-container {
     display: flex;
     flex-wrap: wrap;
@@ -201,210 +207,222 @@ h1 {
     font-weight: 500;
     border: 1px solid #374151;
 }
-
-/* Nasconde elementi modale nella griglia principale */
-.card .preparazione,
-.card .ingredients-container,
-.close-card-btn {
-    display: none !important;
-}
-
 /* ==========================================================================
-   5. SCHEDA DETTAGLIO A TUTTO SCHERMO (OTTIMIZZATA PER IL BUIO)
+   5. MODAL INDIPENDENTE
    ========================================================================== */
-.card.modal-mode {
-     overflow-y: auto !important;
-    position: fixed !important;        
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    z-index: 999999 !important;
-    background-color: #0b0f19 !important; 
-    border-radius: 0 !important;
-    border: none !important;
-    display: flex !important;
-    flex-direction: column !important;
-    overflow-y: auto !important;
-    box-sizing: border-box !important;
-    cursor: default !important;
+
+/* Nasconde la modal quando è chiusa */
+.hidden {
+  display: none !important;
 }
 
-.card.modal-mode .card-thumb {
- height: 100% !important;
-  
-  width: 100% !important;
-  object-fit: contain !important;
+/* Overlay scuro sopra tutta la pagina */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  background: rgba(0, 0, 0, 0.85);
+  overflow-y: auto;
+}
+
+/* Contenitore principale della modal */
+.modal-content {
+  background: #111827;
+  color: #ffffff;
+  min-height: 100dvh;
+  position: relative;
+}
+
+/* Bottone X per chiudere */
+.modal-close {
+  position: fixed;
+  top: 12px;
+  right: 12px;
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.75);
+  color: #ffffff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1000000;
+}
+
+/* Corpo dinamico della modal */
+#modal-body {
+  width: 100%;
+}
+
+/* MOBILE: immagine sopra, contenuto sotto */
+.modal-img {
+  width: 100%;
+  height: 42dvh;
+  object-fit: cover;
+  display: block;
   background: #050914;
 }
 
-.card.modal-mode .card-body {
-    flex: 1 !important;
-    overflow: visible !important;
-    padding-bottom: 80px !important;
-    padding: 24px !important;
-    gap: 24px !important; 
+/* Testo della modal */
+.modal-info {
+  padding: 22px 24px 90px;
+  box-sizing: border-box;
 }
 
-.card.modal-mode h2 {
-    font-size: 2.6rem !important;
-    font-weight: 900 !important;
-    color: #ef4444 !important;         
-    margin: 0 !important;
-    letter-spacing: -0.03em !important;
-}
-
-.card.modal-mode .tag-badge {
-    font-size: 0.9rem !important;
-    color: #fbbf24;
-    border: 1px solid rgba(251,191,36,.4);
-    background: rgba(251,191,36,.08);
-
-    padding: 4px 10px !important;
-    border-radius: 6px !important;
-}
-
-.card.modal-mode .ingredients-container {
-    display: flex !important;
-    flex-direction: column !important; 
-    gap: 10px !important;
-}
-
-.card.modal-mode .ingredient-badge {
-    background-color: transparent !important;
-    border: none !important;
-    padding: 0 !important;
-    font-size: 1.25rem !important; 
-    font-weight: 600 !important;
-    color: #ffffff !important;
-    display: flex !important;
-    align-items: center !important;
-}
-
-.card.modal-mode .ingredient-badge::before {
-    content: "•" !important;
-    color: #ef4444 !important;
-    font-size: 1.6rem !important;
-    margin-right: 12px !important;
-    line-height: 1 !important;
-    text-shadow: 0 0 6px #ef4444 !important;
-}
-
-.card.modal-mode .preparazione {
-    display: block !important;
-    font-size: 1.2rem !important;
-    line-height: 1.6 !important;
-    color: #fbbf24!important; 
-    border-top: 1px solid #1f2937 !important;
-    padding-top: 20px !important;
-    margin: 0 !important;
-}
-
-.card.modal-mode .preparazione strong {
-    color: #ffffff !important; 
-    display: block !important;  
-    margin-bottom: 8px !important;
-    font-size: 1.3rem !important;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-body.modal-open {
-    overflow: hidden !important;
-}
-/* Il bottone tondo fluttuante con la X per chiudere la modale */
-.card.modal-mode .close-card-btn {
-    display: flex !important;
-    position: fixed !important;
-    top: 16px !important;
-    right: 16px !important;
-    z-index: 1000000 !important;
-    background-color: rgba(31, 41, 55, 0.8) !important; /* Semitrasparente sopra la foto */
-    backdrop-filter: blur(4px) !important;              /* Effetto vetro sfocato sul telefono */
-    color: #ffffff !important;
-    border: 1px solid #4b5563 !important;
-    width: 46px !important;
-    height: 46px !important;
-    border-radius: 50% !important;                       /* Lo rende perfettamente tondo */
-    font-size: 26px !important;
-    font-weight: bold !important;
-    cursor: pointer !important;
-    align-items: center !important;
-    justify-content: center !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
-    transition: background-color 0.2s ease !important;
-}
-
-/* Effetto hover quando passi il mouse sulla X del computer */
-.card.modal-mode .close-card-btn:hover {
-    background-color: #ef4444 !important; /* Diventa rossa quando ci passi sopra */
-    border-color: #ef4444 !important;
-}
-
-
-/* ==========================================================================
-   6. CONFIGURAZIONE DESKTOP (AGGIUNTA: Blocca lo spostamento su PC)
-   ========================================================================== */
-@media (min-width: 768px) {
-    /* Blocca l'header in alto al centro sul computer senza farlo allargare a caso */
-    .header-container {
-        max-width: 600px !important;
-        padding: 12px !important;
-    }
-
-    /* Aumenta lo scalino su PC così il menu non copre MAI le card della griglia */
-    #app {
-        grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-        gap: 24px;
-        padding: 150px 24px 32px 24px !important; 
-    }
-
-    /* Modale elegante divisa in due colonne su computer */
-    .card.modal-mode {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important; 
-        align-items: start !important;
-        overflow-x: hidden !important;
-    }
-
-    .card.modal-mode .card-thumb {
-        height: 100vh !important;
-        width: 100% !important;
-        position: sticky !important; 
-        top: 0 !important;
-        object-fit: cover !important;
-    }
-
-    .card.modal-mode .card-body {
-        padding: 60px 40px !important; 
-        height: 100vh !important;
-        box-sizing: border-box !important;
-        overflow-y: auto !important; 
-        display: flex !important;
-        flex-direction: column !important;
-}
-        
- }
-
- 
-    /* Qui metto stilii per togliere il bicchiere dalla card e le quantità del ingrediente*/
-.ingredient-badge .qty {
-  display: none;
-}
-
- .bicchiere {
-  display: none;
-}
-.card.modal-mode .ingredient-badge .qty {
-  display: inline;
-  margin-right: 8px;
+/* Titolo cocktail nella modal */
+.modal-info h2 {
+  margin: 0 0 12px 0;
+  font-size: 2.1rem;
+  font-weight: 900;
   color: #ef4444;
-  font-weight: 700;
 }
 
-.card.modal-mode .bicchiere {
+/* Ingredienti nella modal: uno sotto l'altro */
+.modal-info .ingredients-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 22px 0;
+}
+
+/* Ingredienti nella modal: senza badge pesante */
+.modal-info .ingredient-badge {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+/* Nasconde quantità nelle card */
+.card .qty {
+  display: none;
+}
+
+/* Mostra quantità nella modal */
+.modal-info .qty {
+  display: inline;
+  color: #ef4444;
+  font-weight: 800;
+  margin-right: 8px;
+}
+
+/* Bicchiere e garnish */
+.modal-info .bicchiere,
+.modal-info .garnish {
   display: block;
   color: #9ca3af;
-  font-size: 1rem;
-  margin-top: 8px;
+  margin: 12px 0;
+}
+
+/* Testo preparazione */
+.modal-info .preparazione {
+  display: block !important;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #1f2937;
+  line-height: 1.7;
+  color: #f3f4f6;
+}
+
+/* Titoli piccoli dentro preparazione, bicchiere e garnish */
+.modal-info .preparazione strong,
+.modal-info .bicchiere strong,
+.modal-info .garnish strong {
+  color: #fbbf24;
+}
+
+/* Varianti cocktail */
+.varianti {
+  margin-top: 20px;
+}
+
+/* Note cocktail */
+.note {
+  margin-top: 20px;
+}
+
+.note ul {
+  padding-left: 20px;
+}
+
+.note li {
+  margin-bottom: 6px;
+}
+
+/* Blocca lo scroll della pagina sotto la modal */
+body.modal-open {
+  overflow: hidden;
+}
+
+/* Nasconde elementi che non devono comparire nella card */
+.card .preparazione,
+.card .ingredients-container,
+.close-card-btn {
+  display: none !important;
+}
+
+/* ==========================================================================
+   6. DESKTOP GENERALE
+   ========================================================================== */
+
+@media (min-width: 768px) {
+.header-container {
+    max-width: 600px !important;
+    padding: 12px !important;
+  }
+
+  #app {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 24px;
+    padding: 24px 24px 32px 24px !important;
+  }
+}
+
+/* ==========================================================================
+   7. MODAL DESKTOP
+   ========================================================================== */
+
+@media (min-width: 768px) {
+  .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+
+  .modal-content {
+    width: min(1200px, 95vw);
+    height: 90vh;
+    min-height: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid #1f2937;
+    background: #111827;
+  }
+
+  #modal-body {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .modal-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .modal-info {
+    height: 100%;
+    overflow-y: auto;
+    padding: 32px;
+    box-sizing: border-box;
+    background: #111827;
+  }
+
+  .modal-info h2 {
+    font-size: 2.4rem;
+  }
 }
