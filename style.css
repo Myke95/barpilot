@@ -1,4 +1,16 @@
 /* ==========================================================================
+Palette ufficiale BarPilot
+
+#ef4444  → Titoli cocktail
+#f472b6  → Tag
+#fbbf24  → Preparazione / Garnish / Bicchiere
+#ffffff  → Testo
+#111827  → Sfondo
+#1f2937  → Elementi secondari
+
+
+
+
    1. BASE E CONFIGURAZIONE GENERALE
    ========================================================================= */
 html, body {
@@ -18,7 +30,7 @@ h1 {
     margin: 4px 0 2px 0;                     
     font-size: 1.1rem;             /* Piccolo e finissimo */
     font-weight: 900;
-     
+     text-transform: uppercase;
     letter-spacing: 0.25em;        /* Molto spaziato per rimanere lussuoso */
     color: #ffffff;            
     display: inline-block;
@@ -29,9 +41,7 @@ h1 {
         0 0 15px rgba(239, 68, 68, 0.5); 
 }
 
-/* ==========================================================================
-   2. IL MENU SUPERIORE (Ultra compatto e affiancato su mobile)
-   ========================================================================= */
+
 /* ==========================================================================
    HEADER STICKY
    Rimane in alto durante lo scroll senza creare problemi da fixed
@@ -55,6 +65,7 @@ h1 {
 
   background-color: #111827;
   box-sizing: border-box;
+  border-bottom: 1px solid #1f2937; 
 }
 
 .header-container h1 {
@@ -69,7 +80,7 @@ h1 {
     padding: 10px 12px;             
     font-size: 0.90rem;
     border-radius: 8px;
-    border: 1px solid #374151;
+    border: 1px solid #cc2121;
     background-color: #1f2937;    /* Grigio scuro di base dell'applicazione */
     color: #ffffff;
     outline: none;
@@ -92,7 +103,7 @@ h1 {
     padding: 8px 28px 8px 12px;    
     font-size: 0.8rem;
     border-radius: 8px;
-    border: 1px solid #374151;
+    border: 1px solid #ef4444;
     background-color: #1f2937;    /* Grigio scuro di base uguale alla ricerca */
     color: #ffffff;
     outline: none;
@@ -182,11 +193,14 @@ h1 {
 }
 
 .tag-badge {
-    color: #fbbf24;
-    border: 1px solid rgba(251,191,36,.4);
-    background: rgba(251,191,36,.08);
+    padding:2px;
+    color: #f9a8d4;
+    background: rgba(236,72,153,.12);
+
+    box-shadow:
+      0 0 4px rgba(236,72,153,.25);
                     
-    font-size: 0.70rem;
+    font-size: 0.75rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -367,9 +381,28 @@ body.modal-open {
    ========================================================================== */
 
 @media (min-width: 768px) {
-.header-container {
-    max-width: 600px !important;
-    padding: 12px !important;
+.header-container{
+    width: 100%;
+    max-width: none;
+    padding: 12px;
+    justify-content: center;
+    gap: 6px;
+  }
+  
+    /* Barra ricerca */
+  #search {
+    flex: 0 1 620px !important;
+    max-width: 620px;
+    font-size: 0.85rem;
+    padding: 8px 12px;
+  }
+
+    /* Select filtri */
+  .filter-select {
+    flex: 0 0 220px !important;
+    width: 220px;
+    font-size: 0.85rem;
+    padding: 8px 12px;
   }
 
   #app {
@@ -380,7 +413,56 @@ body.modal-open {
 }
 
 /* ==========================================================================
-   7. MODAL DESKTOP
+   7. MOBILE SCREEN  colore tag fucsia #f9a8d4; box-shadow:
+      0 0 2px rgba(236,72,153,.25);
+   ========================================================================== */
+
+@media (max-width: 767px) {
+  
+  
+  /* MOBILE MODAL */
+.modal {
+  position: fixed;
+  inset: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modal-content {
+  min-height: 100dvh;
+  background: #111827;
+}
+
+.modal-img {
+ width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.modal-info {
+  padding: 22px 24px 120px;
+}
+  
+  .tag-badge {
+    padding:1px;
+    font-size: 0.70rem;
+    font-weight: 600;
+   }
+
+   .header-container {
+    gap: 12px;
+   }
+  #search,
+.filter-select {
+  height: 30px;
+  box-sizing: border-box;
+}
+  
+}
+
+/* ==========================================================================
+   8. MODAL DESKTOP
    ========================================================================== */
 
 @media (min-width: 768px) {
