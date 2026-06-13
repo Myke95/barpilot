@@ -22,24 +22,6 @@ html, body {
     color: #ffffff;            /* Testo bianco */
 }
 
-/* ==========================================================================
-   IL TITOLO / FIRMA (Effetto Neon da Cocktail Bar Notturno)
-   ========================================================================= */
-h1 {
-    text-align: center;
-    margin: 4px 0 2px 0;                     
-    font-size: 1.1rem;             /* Piccolo e finissimo */
-    font-weight: 900;
-     text-transform: uppercase;
-    letter-spacing: 0.25em;        /* Molto spaziato per rimanere lussuoso */
-    color: #ffffff;            
-    display: inline-block;
-    align-self: center;
-    text-shadow: 
-        0 0 3px #ffffff,            
-        0 0 8px #dd3232,           
-        0 0 15px rgba(239, 68, 68, 0.5); 
-}
 
 
 /* ==========================================================================
@@ -51,32 +33,40 @@ h1 {
   position: sticky;
   top: 0;
   z-index: 999;
-
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-
-  padding: 8px 12px;
-
+  padding: 10px 12px;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: column;
+  gap:10px;
   align-items: center;
-
-  background-color: #111827;
+  background-color: #0A1121;
   box-sizing: border-box;
   border-bottom: 1px solid #1f2937; 
 }
 
-.header-container h1 {
-    width: 100% !important;
-    text-align: center !important;
+/* ==========================================================================
+   IL logo in svg
+   ========================================================================= */
+.site-logo {
+    width: 140px;
+    height: auto;
+    display: block;
+ 
+   
+
+}
+.header-controls {
+    width: 100%;
+    display: flex;
+    gap: 10px;
 }
 
 /* BARRA DI RICERCA DI BASE */
 #search {
-    flex: 6 !important;
-    width: 80%;
+    flex:1;
+    min-width:0;
     padding: 10px 12px;             
     font-size: 0.90rem;
     border-radius: 8px;
@@ -88,22 +78,26 @@ h1 {
     transition: all 0.2s ease;
 }
 
+
+
 #search:focus, #search:hover {
     border-color: #ef4444 !important; 
     background-color: #1a1f2c !important; 
     box-shadow: 
         0 0 8px rgba(239, 68, 68, 0.6), 
-        0 0 15px rgba(239, 68, 68, 0.3); 
+        0 0 15px rgba(239, 68, 68, 0.3);
+ 
 }
 
 /* IL SELECT DEI DISTILLATI DI BASE */
 .filter-select {
-    flex: 4 !important;
-    width: auto !important;
-    padding: 8px 28px 8px 12px;    
+   
+    width:82px;
+    flex-shrink:0;
+    padding: 8px 18px 8px 8px;    
     font-size: 0.8rem;
     border-radius: 8px;
-    border: 1px solid #ef4444;
+    border: 1px solid #cc2121;
     background-color: #1f2937;    /* Grigio scuro di base uguale alla ricerca */
     color: #ffffff;
     outline: none;
@@ -111,9 +105,6 @@ h1 {
     box-sizing: border-box;
     -webkit-appearance: none;
     appearance: none;
-   
-    background-position: right 10px center;
-    background-size: 12px;
     transition: all 0.2s ease;
 }
 
@@ -346,10 +337,22 @@ h1 {
   color: #fbbf24;
 }
 
-/* Varianti cocktail */
+/*VARIANTI COCKTAIL ....AL MOMENTO IN PAUSA 
+
+
 .varianti {
   margin-top: 20px;
+  
 }
+.variante-item {
+  display: inline-block;
+  color: #ef4444!important;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-right: 10px;
+  margin-bottom: 6px;
+}
+*/
 
 /* Note cocktail */
 .note {
@@ -381,28 +384,42 @@ body.modal-open {
    ========================================================================== */
 
 @media (min-width: 768px) {
-.header-container{
+
+  .header-container {
+    display: grid;
+    grid-template-columns: 150px 1fr 90px;
+    margin:0;
+    align-items: center;
+    gap: 16px;
+    max-width:none;
     width: 100%;
-    max-width: none;
-    padding: 12px;
-    justify-content: center;
-    gap: 6px;
+    padding: 24px 24px;
+    box-sizing: border-box;
+
+    background: #111827f1;
+}
+  .site-logo {
+    width: 150px;
+    display: block;
+    justify-self:start;
+    }
+
+      .header-controls {
+    display: contents;
   }
-  
     /* Barra ricerca */
   #search {
-    flex: 0 1 620px !important;
-    max-width: 620px;
-    font-size: 0.85rem;
-    padding: 8px 12px;
+    width: 100%;
+  
+  
   }
 
     /* Select filtri */
   .filter-select {
-    flex: 0 0 220px !important;
-    width: 220px;
-    font-size: 0.85rem;
-    padding: 8px 12px;
+    width: 90px;
+    justify-self:end;
+    font-size: 0.9rem;
+    padding: 10px 14px;
   }
 
   #app {
@@ -412,9 +429,14 @@ body.modal-open {
   }
 }
 
+
+ .card-thumb {
+    height: 280px;
+    object-fit: cover;
+    object-position: center center;
+  }
 /* ==========================================================================
-   7. MOBILE SCREEN  colore tag fucsia #f9a8d4; box-shadow:
-      0 0 2px rgba(236,72,153,.25);
+   7. MOBILE SCREEN  
    ========================================================================== */
 
 @media (max-width: 767px) {
@@ -433,12 +455,7 @@ body.modal-open {
   background: #111827;
 }
 
-.modal-img {
- width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
+
 
 .modal-info {
   padding: 22px 24px 120px;
@@ -487,13 +504,16 @@ body.modal-open {
   #modal-body {
     height: 100%;
     display: grid;
-    grid-template-columns: 50% 50%;
+    grid-template-columns: 42% 58%;
   }
 
   .modal-img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+    background: rgba(0, 0, 0, 0.815);
   }
 
   .modal-info {

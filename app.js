@@ -121,20 +121,6 @@ function openModal(c) {
           : ""
       }
 
-      ${
-        c.varianti
-          ? `
-            <div class="varianti">
-              <strong>Varianti:</strong>
-              <div class="tags-container">
-                ${c.varianti
-                  .map((v) => `<span class="tag-badge">${v}</span>`)
-                  .join("")}
-              </div>
-            </div>
-          `
-          : ""
-      }
 
       ${
         c.note
