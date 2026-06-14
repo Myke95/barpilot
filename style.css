@@ -34,7 +34,7 @@ html, body {
   top: 0;
   z-index: 999;
   width: 100%;
-  max-width: 600px;
+  
   margin: 0 auto;
   padding: 10px 12px;
   display: flex;
@@ -53,11 +53,9 @@ html, body {
     width: 140px;
     height: auto;
     display: block;
- 
-   
+ }
 
-}
-.header-controls {
+ .header-controls {
     width: 100%;
     display: flex;
     gap: 10px;
@@ -91,7 +89,6 @@ html, body {
 
 /* IL SELECT DEI DISTILLATI DI BASE */
 .filter-select {
-   
     width:82px;
     flex-shrink:0;
     padding: 8px 18px 8px 8px;    
@@ -117,19 +114,20 @@ html, body {
 }
 
 /* ==========================================================================
-   3. LA GRIGLIA A DUE COLONNE (Stile IBA)
+   3. LA GRIGLIA A DUE COLONNE  Mobile
    ========================================================================== */
 #app {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns:repeat(2,1fr);
   gap: 20px;
   padding: 20px 16px 32px 16px;
   max-width: 1200px;
   margin: 0 auto;
   box-sizing: border-box;
 }
+
 /* ==========================================================================
-   4. DESIGN DELLA CARD SOLIDA (Stile squadrato e pulito IBA)
+   4. DESIGN DELLA CARD 
    ========================================================================== */
 .card {
     background-color: #111827;    
@@ -212,8 +210,112 @@ html, body {
     font-weight: 500;
     border: 1px solid #374151;
 }
+
+
+
+
 /* ==========================================================================
-   5. MODAL INDIPENDENTE
+   SMARTPHONE
+   ========================================================================== */
+   @media (max-width: 479px){
+    #app{
+      grid-template-columns: repeat(2,1fr);
+      gap:12px;
+      padding: 16px 12px 24px;
+    }
+    .card-thumb{
+      height:140px;
+    
+    }
+    .card h2{
+      font-size:0.9rem;
+    }
+   }
+  
+
+/* ==========================================================================
+   TABLET
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1023px){
+
+ #app {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 24px;
+  }
+
+  .card-thumb {
+    height: 220px;
+  }
+}
+
+
+/* ==========================================================================
+   DESKTOP 
+   ========================================================================== */
+
+@media (min-width: 1024px) {
+
+    .header-container {
+    display: grid;
+    grid-template-columns: 180px 1fr 100px;
+    align-items: center;
+    gap: 16px;
+
+    margin: 0;
+    max-width: none;
+    width: 100%;
+
+    padding: 24px;
+    box-sizing: border-box;
+    background: #111827;
+  }
+
+  .site-logo {
+    width: 150px;
+    height: auto;
+    display: block;
+    justify-self: start;
+  }
+
+  .header-controls {
+    display: contents;
+  }
+
+  #search {
+    width: 100%;
+    justify-self: stretch;
+  }
+
+  .filter-select {
+    width: 90px;
+    justify-self: end;
+    font-size: 0.9rem;
+    padding: 10px 14px;
+  }
+
+  #app {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 24px 24px 32px 24px !important;
+  }
+
+  #app {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    padding: 24px 24px 32px 24px !important;
+  }
+
+  .card-thumb {
+    height: 280px;
+    object-fit: cover;
+    object-position: center center;
+  }
+ }
+
+
+ /* ==========================================================================
+   5. MODAL INDIPENDENTE mobile
    ========================================================================== */
 
 /* Nasconde la modal quando è chiusa */
@@ -240,7 +342,7 @@ html, body {
 
 /* Bottone X per chiudere */
 .modal-close {
-  position: fixed;
+  position: absolute;
   top: 12px;
   right: 12px;
   width: 42px;
@@ -337,22 +439,6 @@ html, body {
   color: #fbbf24;
 }
 
-/*VARIANTI COCKTAIL ....AL MOMENTO IN PAUSA 
-
-
-.varianti {
-  margin-top: 20px;
-  
-}
-.variante-item {
-  display: inline-block;
-  color: #ef4444!important;
-  font-weight: 700;
-  font-size: 0.95rem;
-  margin-right: 10px;
-  margin-bottom: 6px;
-}
-*/
 
 /* Note cocktail */
 .note {
@@ -378,70 +464,7 @@ body.modal-open {
 .close-card-btn {
   display: none !important;
 }
-
-/* ==========================================================================
-   6. DESKTOP GENERALE
-   ========================================================================== */
-
-@media (min-width: 768px) {
-
-  .header-container {
-    display: grid;
-    grid-template-columns: 150px 1fr 90px;
-    margin:0;
-    align-items: center;
-    gap: 16px;
-    max-width:none;
-    width: 100%;
-    padding: 24px 24px;
-    box-sizing: border-box;
-
-    background: #111827f1;
-}
-  .site-logo {
-    width: 150px;
-    display: block;
-    justify-self:start;
-    }
-
-      .header-controls {
-    display: contents;
-  }
-    /* Barra ricerca */
-  #search {
-    width: 100%;
-  
-  
-  }
-
-    /* Select filtri */
-  .filter-select {
-    width: 90px;
-    justify-self:end;
-    font-size: 0.9rem;
-    padding: 10px 14px;
-  }
-
-  #app {
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 24px;
-    padding: 24px 24px 32px 24px !important;
-  }
-}
-
-
- .card-thumb {
-    height: 280px;
-    object-fit: cover;
-    object-position: center center;
-  }
-/* ==========================================================================
-   7. MOBILE SCREEN  
-   ========================================================================== */
-
-@media (max-width: 767px) {
-  
-  
+ 
   /* MOBILE MODAL */
 .modal {
   position: fixed;
@@ -467,64 +490,66 @@ body.modal-open {
     font-weight: 600;
    }
 
-   .header-container {
-    gap: 12px;
-   }
-  #search,
-.filter-select {
-  height: 30px;
-  box-sizing: border-box;
-}
-  
-}
-
-/* ==========================================================================
-   8. MODAL DESKTOP
+   /* ==========================================================================
+      MODAL DESKTOP - deve stare ALLA FINE del CSS
    ========================================================================== */
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .modal {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
+
+    padding: 40px;
     box-sizing: border-box;
   }
 
   .modal-content {
     width: min(1200px, 95vw);
-    height: 90vh;
+    max-height: calc(100vh - 80px);
+
     min-height: 0;
+    height: auto;
+
     border-radius: 16px;
     overflow: hidden;
+
     border: 1px solid #1f2937;
     background: #111827;
+    position: relative;
   }
 
   #modal-body {
-    height: 100%;
     display: grid;
-    grid-template-columns: 42% 58%;
+    grid-template-columns: 40% 60%;
+    height: auto;
+    max-height: calc(100vh - 80px);
   }
 
   .modal-img {
     width: 100%;
     height: 100%;
+    max-height: calc(100vh - 80px);
+
     object-fit: contain;
-    object-position: center;
+    object-position: left;
+
     display: block;
-    background: rgba(0, 0, 0, 0.815);
+    background: #111827;
   }
 
   .modal-info {
-    height: 100%;
+    max-height: calc(100vh - 80px);
     overflow-y: auto;
-    padding: 32px;
+
+    padding: 36px;
     box-sizing: border-box;
     background: #111827;
   }
 
-  .modal-info h2 {
-    font-size: 2.4rem;
+  .modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
   }
 }
