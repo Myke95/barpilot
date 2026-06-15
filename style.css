@@ -364,10 +364,11 @@ html, body {
 /* MOBILE: immagine sopra, contenuto sotto */
 .modal-img {
   width: 100%;
-  height: 42dvh;
+  height: auto;
+  max-height:42dvh;
   object-fit: cover;
   display: block;
-  background: #050914;
+  background: #111827;;
 }
 
 /* Testo della modal */
@@ -478,8 +479,6 @@ body.modal-open {
   background: #111827;
 }
 
-
-
 .modal-info {
   padding: 22px 24px 120px;
 }
@@ -551,5 +550,43 @@ body.modal-open {
     position: absolute;
     top: 16px;
     right: 16px;
+  }
+}
+
+/* ==========================================================================
+   MOBILE GRANDE: 480px - 767px
+   ========================================================================== */
+
+@media (min-width: 480px) and (max-width: 767px) {
+  .modal-img {
+    width: 100%;
+    height: auto;
+    max-height: 45dvh;
+    object-fit: contain;
+    object-position: center;
+    background: #000000
+  }
+
+  .modal-info {
+    padding: 22px 24px 120px;
+  }
+}
+
+/* ==========================================================================
+   TABLET modal 
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1023px){
+   
+    .modal-img {
+  
+   
+    object-fit: contain;
+    object-position: center;
+    background: #000000
+  }
+
+
+  .card-thumb {
+    height: 220px;
   }
 }

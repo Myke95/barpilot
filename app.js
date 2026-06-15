@@ -28,7 +28,9 @@ function render(list) {
     foto.className = "card-thumb";
     foto.src = c.immagine;
     foto.alt = c.nome;
-
+    foto.loading = "lazy";
+    foto.width = "300"
+    foto.height = "400"
     const cardBody = document.createElement("div");
     cardBody.className = "card-body";
 

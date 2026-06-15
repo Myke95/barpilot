@@ -11,7 +11,7 @@ const cocktails = [
     ],
     preparazione: "Versare Campari e Sweet Vermouth in un old fashioned colmo di ghiaccio. Completare con soda e mescolare delicatamente.",
     garnish: "Orange Slice",
-    immagine: "img/americano.png",
+    immagine: "img/americano.webp",
     tag: ["Classico", "Aperitivo", "Amaro"]
   },
   {
@@ -26,7 +26,7 @@ const cocktails = [
     ],
     preparazione: "Shakerare tutti gli ingredienti con ghiaccio. Filtrare in una coppetta cocktail ben fredda.",
     garnish: "Nessuna",
-    immagine: "img/angel-face.png",
+    immagine: "img/angel-face.webp",
     tag: ["Classico", "Fruttato", "Strong"]
   },
   {
@@ -41,7 +41,7 @@ const cocktails = [
     ],
     preparazione: "Riempire il calice di ghiaccio. Versare Prosecco, Aperol e soda. Mescolare delicatamente.",
     garnish: "Orange Slice",
-    immagine: "img/aperol-spritz.png",
+    immagine: "img/aperol-spritz.webp",
     tag: ["Aperitivo", "Fresco", "Party"]
   },
   {
@@ -56,7 +56,7 @@ const cocktails = [
     ],
     preparazione: "Shakerare tutti gli ingredienti con ghiaccio. Filtrare in una coppetta cocktail raffreddata.",
     garnish: "Apple Slice",
-    immagine: "img/apple-martini.png",
+    immagine: "img/apple-martini.webp",
     tag: ["Fruttato", "Dolce", "Party"]
   },
   {
@@ -72,7 +72,7 @@ const cocktails = [
     ],
     preparazione: "Shakerare tutti gli ingredienti con ghiaccio. Filtrare in una coppetta cocktail ben fredda.",
     garnish: "Maraschino Cherry",
-    immagine: "img/aviation.png",
+    immagine: "img/aviation.webp",
     tag: ["Classico", "Floreale", "Asprigno"]
   },
   {
@@ -87,7 +87,7 @@ const cocktails = [
     ],
     preparazione: "Versare i liquori a strati nello shot glass usando il dorso di un cucchiaio. Prima Coffee Liqueur poi Irish Cream e Grand Marnier",
     garnish: "Nessuna",
-    immagine: "img/b-52.png",
+    immagine: "img/b-52.webp",
     tag: ["Shot", "Dolce", "Party"]
   },
   {
@@ -105,7 +105,7 @@ const cocktails = [
     ],
     preparazione: "Shakerare tutti gli ingredienti con ghiaccio. Versare in un hurricane glass con ghiaccio tritato.",
     garnish: "Pineapple Wedge",
-    immagine: "img/bahama-mama.png",
+    immagine: "img/bahama-mama.webp",
     tag: ["Tropicale", "Fruttato", "Party"]
   },
   {
@@ -119,7 +119,7 @@ const cocktails = [
     ],
     preparazione: "Versare la purea di pesca nella flute ben fredda. Completare delicatamente con Prosecco.",
     garnish: "Nessuna",
-    immagine: "img/bellini.png",
+    immagine: "img/bellini.webp",
     tag: ["Classico", "Fruttato", "Aperitivo"]
   },
   {
@@ -135,7 +135,7 @@ const cocktails = [
     ],
     preparazione: "Shakerare tutti gli ingredienti con ghiaccio. Filtrare in una coppetta cocktail raffreddata.",
     garnish: "Lemon Twist",
-    immagine: "img/between-the-sheets.png",
+    immagine: "img/between-the-sheets.webp",
     tag: ["Classico", "Asprigno", "Strong"]
   },
   {
@@ -149,7 +149,7 @@ const cocktails = [
     ],
     preparazione: "Versare gli ingredienti in un old fashioned con ghiaccio. Mescolare delicatamente.",
     garnish: "Nessuna",
-    immagine: "img/black-russian.png",
+    immagine: "img/black-russian.webp",
     tag: ["After Dinner", "Caffè", "Strong"]
   },
   {
@@ -165,7 +165,7 @@ const cocktails = [
     ],
     preparazione: "Shakerare tutti gli ingredienti con ghiaccio. Filtrare in una coppetta cocktail ben fredda.",
     garnish: "Orange Peel",
-    immagine: "img/blood-and-sand.png",
+    immagine: "img/blood-and-sand.webp",
     tag: ["Classico", "Fruttato", "Whisky"]
   },
   {
@@ -184,7 +184,7 @@ const cocktails = [
     ],
     preparazione: "Versare gli ingredienti in uno shaker con ghiaccio e miscelare delicatamente. Servire in highball.",
     garnish: "Celery Stick",
-    immagine: "img/bloody-mary.png",
+    immagine: "img/bloody-mary.webp",
     tag: ["Classico", "All Day", "Speziato"]
   },
   {
@@ -200,7 +200,7 @@ const cocktails = [
     ],
     preparazione: "Shakerare tutti gli ingredienti con ghiaccio. Versare in un hurricane glass con ghiaccio tritato.",
     garnish: "Pineapple Wedge",
-    immagine: "img/blue-hawaiian.png",
+    immagine: "img/blue-hawaiian.webp",
     tag: ["Tropicale", "Dolce", "Party"]
   },
   {
@@ -215,7 +215,7 @@ const cocktails = [
     ],
     preparazione: "Versare gli ingredienti in un highball pieno di ghiaccio. Mescolare delicatamente.",
     garnish: "Lemon Slice",
-    immagine: "img/blue-lagoon.png",
+    immagine: "img/blue-lagoon.webp",
     tag: ["Fresco", "Fruttato", "Party"]
   },
   {
@@ -231,7 +231,7 @@ const cocktails = [
     ],
     preparazione: "Shakerare Gin, Lemon Juice e Simple Syrup. Filtrare su ghiaccio tritato e completare con Crème de Mûre.",
     garnish: "Blackberry",
-    immagine: "img/bramble.png",
+    immagine: "img/bramble.webp",
     tag: ["Classico", "Asprigno", "Fruttato"]
   },
   {
@@ -246,7 +246,7 @@ const cocktails = [
     ],
     preparazione: "Shakerare tutti gli ingredienti con ghiaccio. Filtrare in una coppetta cocktail.",
     garnish: "Nutmeg",
-    immagine: "img/brandy-alexander.png",
+    immagine: "img/brandy-alexander.webp",
     tag: ["After Dinner", "Dolce", "Cremoso"]
   },
   {
@@ -262,7 +262,7 @@ const cocktails = [
     ],
     preparazione: "Shakerare tutti gli ingredienti con ghiaccio. Filtrare in una coppetta cocktail ben fredda.",
     garnish: "Orange Peel",
-    immagine: "img/bronx.png",
+    immagine: "img/bronx.webp",
     tag: ["Classico", "Fruttato", "All Day"]
   },
   {
@@ -278,7 +278,7 @@ const cocktails = [
     ],
     preparazione: "Mescolare gli ingredienti in mixing glass con ghiaccio. Filtrare in una coppetta cocktail raffreddata.",
     garnish: "Maraschino Cherry",
-    immagine: "img/brooklyn.png",
+    immagine: "img/brooklyn.webp",
     tag: ["Classico", "Whisky", "Strong"]
   },
   {
@@ -296,7 +296,7 @@ const cocktails = [
   note: [
     "Possibile aggiungere un top di soda."
   ],
-  immagine: "img/caipirinha.png",
+  immagine: "img/caipirinha.webp",
   tag: ["Classico", "Fresco", "Party"]
 },
 {
@@ -316,7 +316,7 @@ const cocktails = [
     "Le varianti possono essere preparate con purea o frutta fresca.",
     "Possibile aggiungere un top di soda."
   ],
-  immagine: "img/caipiroska.png",
+  immagine: "img/caipiroska.webp",
   tag: ["Classico", "Fresco", "Party"]
 },
 {
@@ -332,7 +332,7 @@ const cocktails = [
   ],
   preparazione: "Eseguire dry shake senza ghiaccio. Aggiungere ghiaccio e shakerare di nuovo. Filtrare in una coppetta cocktail.",
   garnish: "Raspberry",
-  immagine: "img/clover-club.png",
+  immagine: "img/clover-club.webp",
   tag: ["Classico", "Fruttato", "Elegante"]
 },
 {
@@ -348,7 +348,7 @@ const cocktails = [
   ],
   preparazione: "Shakerare tutti gli ingredienti con ghiaccio. Filtrare in una coppetta cocktail raffreddata.",
   garnish: "Orange Twist",
-  immagine: "img/cosmopolitan.png",
+  immagine: "img/cosmopolitan.webp",
   tag: ["Classico", "Fruttato", "Party"]
 },
 {
@@ -363,7 +363,7 @@ const cocktails = [
   ],
   preparazione: "Versare Rum e Lime Juice in un highball con ghiaccio. Completare con Cola e mescolare delicatamente.",
   garnish: "Lime Wedge",
-  immagine: "img/cuba-libre.png",
+  immagine: "img/cuba-libre.webp",
   tag: ["Classico", "Fresco", "Party"]
 },
 {
@@ -378,7 +378,7 @@ const cocktails = [
   ],
   preparazione: "Shakerare tutti gli ingredienti con ghiaccio. Filtrare in una coppetta cocktail ben fredda.",
   garnish: "Lime Wheel",
-  immagine: "img/daiquiri.png",
+  immagine: "img/daiquiri.webp",
   tag: ["Classico", "Asprigno", "Fresco"]
 },
 {
@@ -393,7 +393,7 @@ const cocktails = [
   ],
   preparazione: "Riempire un highball di ghiaccio. Versare Lime Juice e Ginger Beer. Aggiungere il Dark Rum in superficie.",
   garnish: "Lime Wedge, Mint",
-  immagine: "img/dark-n-stormy.png",
+  immagine: "img/dark-n-stormy.webp",
   tag: ["Fresco", "Speziato", "Party"]
 },
 
